@@ -1,0 +1,28 @@
+.card__item {
+  max-width: 360px;
+  /* width: calc(100% - 16px); */
+  justify-self: center;
+  background-color: #222222;
+  border-radius: 6px;
+}
+
+@media (max-width: 1279px) and (min-width: 769px) {
+  .card__item {
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__item {
+    /* width: calc(100% - 16px); */
+    /* max-width: 342px; */
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card__item {
+    /* width: 100%; */
+    /* max-width: 300px; */
+  }
+}

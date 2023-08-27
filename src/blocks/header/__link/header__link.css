@@ -1,0 +1,16 @@
+.header__link {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.header__link:hover {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 320px) {
+  .header__link {
+    font-size: 10px;
+  }
+}

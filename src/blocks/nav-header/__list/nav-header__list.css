@@ -1,0 +1,8 @@
+.nav-header__list {
+  margin: 0;
+  margin-right: 50px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}

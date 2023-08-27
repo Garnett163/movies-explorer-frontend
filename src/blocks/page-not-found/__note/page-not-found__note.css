@@ -1,0 +1,12 @@
+.page-not-found__note {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+@media screen and (max-width: 425px) {
+  .page-not-found__note {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

@@ -1,0 +1,4 @@
+.card__button_delete {
+  font-size: 0;
+  background: #313131 url('../../../../images/card__delete-btn.svg') no-repeat center / 7px 7px;
+}

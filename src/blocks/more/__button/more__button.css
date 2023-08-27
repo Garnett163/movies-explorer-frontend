@@ -1,0 +1,17 @@
+.more__button {
+  padding: 0;
+  width: 1140px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #2f2f2f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+.more__button:hover {
+  opacity: 0.8;
+}

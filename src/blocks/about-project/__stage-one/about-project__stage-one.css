@@ -1,0 +1,14 @@
+.about-project__stage-one {
+  margin: 0;
+  padding-top: 10px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__stage-one {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

@@ -1,0 +1,20 @@
+.search-form__toggle-switch {
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+.search-form__toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}

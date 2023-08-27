@@ -1,0 +1,29 @@
+.about-me__box {
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+}
+
+@media screen and (max-width: 1050px) {
+  .about-me__box {
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-me__box {
+    max-width: 364px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .about-me__box {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-me__box {
+    max-width: 292px;
+    align-items: flex-start;
+  }
+}

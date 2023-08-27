@@ -1,0 +1,4 @@
+.card__button_saved {
+  font-size: 0;
+  background: #ee3465 url('../../../../images/card__delete_saved.svg') no-repeat center / 8px 5px;
+}

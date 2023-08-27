@@ -1,0 +1,10 @@
+.promo__flex-box {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .promo__flex-box {
+    align-items: center;
+  }
+}
