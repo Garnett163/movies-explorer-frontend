@@ -19,6 +19,12 @@ function Movies({ isLoggedIn }) {
           <MoviesCard></MoviesCard>
           <MoviesCard></MoviesCard>
           <MoviesCard></MoviesCard>
+          <MoviesCard></MoviesCard>
+          <MoviesCard></MoviesCard>
+          <MoviesCard></MoviesCard>
+          <MoviesCard></MoviesCard>
+          <MoviesCard></MoviesCard>
+          <MoviesCard></MoviesCard>
         </MoviesCardList>
         <MoreButton />
       </main>
