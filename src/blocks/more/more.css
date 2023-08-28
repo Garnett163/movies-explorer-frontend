@@ -1,0 +1,21 @@
+.more {
+  margin: 0 auto;
+  padding: 55px 70px 80px 70px;
+  max-width: 1280px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .more {
+    padding: 50px 30px 80px 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .more {
+    padding: 50px 10px 80px 10px;
+  }
+}

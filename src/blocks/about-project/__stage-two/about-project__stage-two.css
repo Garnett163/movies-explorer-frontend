@@ -1,0 +1,14 @@
+.about-project__stage-two {
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__stage-two {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

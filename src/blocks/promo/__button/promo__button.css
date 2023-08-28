@@ -1,0 +1,19 @@
+.promo__button {
+  padding: 10px 20px;
+  width: 129px;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #073042;
+  border: none;
+  outline: 1px solid rgb(255, 255, 255, 0.6);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
+.promo__button:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,24 @@
+.about-project__stages {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project__stages {
+    width: 319px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__stages {
+    padding-bottom: 56px;
+    width: 284px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__stages:last-child {
+    padding: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.nav-header__link_profile-black {
+  width: 100px;
+  height: 32px;
+  padding: 3px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+}
+
+.nav-header__link_profile-black::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #313131 url('../../../../images/profile__icon.svg') no-repeat center center / 12px 12px;
+}

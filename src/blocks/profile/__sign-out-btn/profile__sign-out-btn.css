@@ -1,0 +1,18 @@
+.profile__sign-out-btn {
+  text-decoration: none;
+  color: #ee3465;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.profile__sign-out-btn:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 425px) {
+  .profile__sign-out-btn {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

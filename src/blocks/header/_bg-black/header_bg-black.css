@@ -1,0 +1,6 @@
+.header_bg-black {
+  background-color: #202020;
+}
+.header_bg-black::after {
+  background-color: #313131 !important;
+}

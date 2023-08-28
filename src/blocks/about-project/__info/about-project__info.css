@@ -1,0 +1,21 @@
+.about-project__info {
+  padding: 70px 0 110px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project__info {
+    padding: 70px 0 93px 0;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__info {
+    padding: 64px 0 60px 0;
+    flex-direction: column;
+    gap: 0;
+  }
+}

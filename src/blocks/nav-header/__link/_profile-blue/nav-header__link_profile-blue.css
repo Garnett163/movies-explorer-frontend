@@ -1,0 +1,17 @@
+.nav-header__link_profile-blue {
+  width: 100px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-header__link_profile-blue::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #0f4157 url('../../../../images/profile__icon.svg') no-repeat center;
+  background-size: 12px 12px;
+}

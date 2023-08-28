@@ -1,0 +1,19 @@
+.about-project__column-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 36px;
+  width: 25%;
+  background-color: #3ddc84;
+}
+@media screen and (max-width: 768px) {
+  .about-project__column-one {
+    width: calc(29% - 16px);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-project__column-one {
+    min-width: 100px;
+  }
+}

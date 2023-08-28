@@ -1,0 +1,13 @@
+.card__item {
+  max-width: 360px;
+  justify-self: center;
+  background-color: #222222;
+  border-radius: 6px;
+}
+
+@media (max-width: 1279px) and (min-width: 769px) {
+  .card__item {
+    max-width: 300px;
+    width: 100%;
+  }
+}
