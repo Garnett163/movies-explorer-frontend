@@ -1,4 +1,4 @@
-.movies-card-list {
+.movies-card {
   margin: 0 auto;
   max-width: 1280px;
   box-sizing: border-box;
@@ -6,13 +6,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .movies-card-list {
+  .movies-card {
     padding: 70px 30px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .movies-card-list {
+  .movies-card {
     padding: 40px 10px;
   }
 }

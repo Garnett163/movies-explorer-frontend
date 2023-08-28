@@ -17,7 +17,7 @@ function MoviesCard() {
   };
 
   return (
-    <li className='card__item'>
+    <li className='card'>
       <div className='card__container'>
         <h2 className='card__title'>В погоне за Бенкси</h2>
         <p className='card__timer'>0ч 42м</p>

@@ -4,10 +4,10 @@ import logo from '../../images/header__logo.svg';
 
 function Login() {
   return (
-    <main className='login'>
+    <main className='auth'>
       <div className='auth__container'>
         <Link to='/'>
-          <img className='header__logo' src={logo} alt='Логотип сайта' />
+          <img className='auth__logo' src={logo} alt='Логотип сайта' />
         </Link>
         <h1 className='auth__title'>Рады видеть!</h1>
         <form className='auth__form' name='login'>

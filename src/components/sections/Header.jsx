@@ -13,7 +13,7 @@ function Header({ isLoggedIn }) {
         <Link to='/'>
           <img className='header__logo' src={headerLogo} alt='Логотип сайта' />
         </Link>
-        {!isLoggedIn ? (
+        {isLoggedIn ? (
           <NavHeader changeBg={changeBg} />
         ) : (
           <ul className='header__list'>

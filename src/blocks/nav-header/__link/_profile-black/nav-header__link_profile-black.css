@@ -10,9 +10,9 @@
 
 .nav-header__link_profile-black::after {
   content: '';
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
-  border-radius: 50px;
+  border-radius: 6px;
   background: #313131 url('../../../../images/profile__icon.svg') no-repeat center center / 12px 12px;
 }

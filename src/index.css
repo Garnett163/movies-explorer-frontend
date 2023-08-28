@@ -82,9 +82,6 @@
 @import url(./blocks/search-form/__checkbox-container/search-form__checkbox-container.css);
 @import url(./blocks/search-form/__text/search-form__text.css);
 
-@import url(./blocks/movies-card-list/movies-card-list.css);
-@import url(./blocks/movies-card-list/__list/movies-card-list__list.css);
-
 @import url(./blocks/page-not-found/page-not-found.css);
 @import url(./blocks/page-not-found/__number/page-not-found__number.css);
 @import url(./blocks/page-not-found/__note/page-not-found__note.css);
@@ -100,9 +97,8 @@
 @import url(./blocks/profile/__edit-btn/profile__edit-btn.css);
 @import url(./blocks/profile/__sign-out-btn/profile__sign-out-btn.css);
 
-@import url(./blocks/register/register.css);
-@import url(./blocks/login/login.css);
-
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/__logo/auth__logo.css);
 @import url(./blocks/auth/__container/auth__container.css);
 @import url(./blocks/auth/__form/auth__form.css);
 @import url(./blocks/auth/__title/auth__title.css);
@@ -112,7 +108,10 @@
 @import url(./blocks/auth/__text/auth__text.css);
 @import url(./blocks/auth/__link/auth__link.css);
 
-@import url(./blocks/card/__item/card__item.css);
+@import url(./blocks/movies-card/movies-card.css);
+@import url(./blocks/movies-card/__list/movies-card__list.css);
+
+@import url(./blocks/card/card.css);
 @import url(./blocks/card/__container/card__container.css);
 @import url(./blocks/card/__title/card__title.css);
 @import url(./blocks/card/__timer/card__timer.css);
@@ -125,11 +124,11 @@
 @import url(./blocks/more/more.css);
 @import url(./blocks/more/__button/more__button.css);
 
-@import url(./blocks/burger-menu/burger-menu.css);
+@import url(./blocks/burger-menu/__overlay/burger-menu__overlay.css);
+@import url(./blocks/burger-menu/__overlay/_open/burger-menu__overlay_open.css);
 @import url(./blocks/burger-menu/__container/burger-menu__container.css);
 @import url(./blocks/burger-menu/__container/_open/burger-menu__container_open.css);
 @import url(./blocks/burger-menu/__button/burger__menu__button.css);
-@import url(./blocks/burger-menu/_open/burger-menu_open.css);
 @import url(./blocks/burger-menu/__close-btn/burger-menu__close-btn.css);
 @import url(./blocks/burger-menu/__list/burger-menu__list.css);
 @import url(./blocks/burger-menu/__link/burger-menu__link.css);

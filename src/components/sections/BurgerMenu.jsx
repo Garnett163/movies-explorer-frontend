@@ -9,9 +9,9 @@ function BurgerMenu() {
   }
 
   return (
-    <>
+    <div className='burger-menu'>
       <button className='burger-menu__button' onClick={toggleMenu}></button>
-      <div className={`burger-menu ${isOpen ? 'burger-menu_open' : ''}`}>
+      <div className={`burger-menu__overlay ${isOpen ? 'burger-menu__overlay_open' : ''}`}>
         <div className={`burger-menu__container ${isOpen ? 'burger-menu__container_open' : ''}`}>
           <button className='burger-menu__close-btn' onClick={toggleMenu}></button>
           <ul className='burger-menu__list'>
@@ -36,7 +36,7 @@ function BurgerMenu() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

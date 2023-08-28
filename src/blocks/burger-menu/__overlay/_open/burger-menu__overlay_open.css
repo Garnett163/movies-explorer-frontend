@@ -1,4 +1,4 @@
-.burger-menu_open {
+.burger-menu__overlay_open {
   opacity: 1;
   visibility: visible;
 }
