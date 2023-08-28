@@ -9,3 +9,4 @@
 **О проекте**
 
 Макет - dark-4
+state - isLoggedIn for change Header
