@@ -3,6 +3,7 @@ import Header from '../sections/Header';
 import SearchForm from '../sections/SearchForm';
 import MoviesCardList from '../sections/MoviesCardList';
 import MoviesCard from '../sections/MoviesCard';
+import Footer from '../sections/Footer';
 
 function SavedMovies({ isLoggedIn }) {
   return (
@@ -16,6 +17,8 @@ function SavedMovies({ isLoggedIn }) {
           <MoviesCard></MoviesCard>
         </MoviesCardList>
       </main>
+      <div className='divider'></div>
+      <Footer />
     </>
   );
 }

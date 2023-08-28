@@ -124,6 +124,8 @@
 @import url(./blocks/more/more.css);
 @import url(./blocks/more/__button/more__button.css);
 
+@import url(./blocks/divider/divider.css);
+
 @import url(./blocks/burger-menu/__overlay/burger-menu__overlay.css);
 @import url(./blocks/burger-menu/__overlay/_open/burger-menu__overlay_open.css);
 @import url(./blocks/burger-menu/__container/burger-menu__container.css);
