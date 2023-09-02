@@ -1,5 +1,6 @@
 .profile__flex-box {
   padding-top: 220px;
+  padding-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

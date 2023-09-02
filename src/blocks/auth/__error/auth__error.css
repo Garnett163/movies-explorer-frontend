@@ -1,0 +1,8 @@
+.auth__error {
+  padding-top: 7px;
+  min-height: 12px;
+  opacity: 0;
+  color: #ee3465;
+  font-size: 12px;
+  font-weight: 500;
+}

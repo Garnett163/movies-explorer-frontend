@@ -1,0 +1,14 @@
+.search-form__error {
+  padding: 0 0 10px 10px;
+  min-height: 12px;
+  opacity: 0;
+  color: #ee3465;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 425px) {
+  .search-form__error {
+    font-size: 12px;
+  }
+}

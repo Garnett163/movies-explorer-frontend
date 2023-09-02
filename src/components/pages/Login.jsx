@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/header__logo.svg';
+import { useFormAndValidation } from '../hooks/useFormAndValidation';
 
-function Login() {
+function Login({ onLogin, serverError }) {
+  const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onLogin(values);
+  }
+
+  useEffect(() => {
+    resetForm();
+  }, [resetForm]);
+
   return (
     <main className='auth'>
       <div className='auth__container'>
@@ -10,7 +22,7 @@ function Login() {
           <img className='auth__logo' src={logo} alt='Логотип сайта' />
         </Link>
         <h1 className='auth__title'>Рады видеть!</h1>
-        <form className='auth__form' name='login'>
+        <form className='auth__form' name='login' onSubmit={handleSubmit}>
           <label className='auth__label' htmlFor='inputEmail'>
             E-mail
             <input
@@ -22,8 +34,11 @@ function Login() {
               required
               minLength='5'
               maxLength='25'
+              onChange={handleChange}
+              value={values.email || ''}
             />
           </label>
+          <span className={`auth__error ${errors.email ? 'auth__error_active' : ''}`}>{errors.email}</span>
           <label className='auth__label' htmlFor='inputPassword'>
             Пароль
             <input
@@ -35,17 +50,23 @@ function Login() {
               required
               minLength='3'
               maxLength='25'
+              onChange={handleChange}
+              value={values.password || ''}
             />
           </label>
-          <button className='auth__button' type='submit'>
-            Войти
-          </button>
-          <p className='auth__text'>
-            Ещё не зарегистрированы?
-            <Link to='/signup' className='auth__link'>
-              Регистрация
-            </Link>
-          </p>
+          <span className={`auth__error ${errors.password ? 'auth__error_active' : ''}`}>{errors.password}</span>
+          <div className='auth__flex-box'>
+            <span className='auth__server-error'>{serverError}</span>
+            <button className={`auth__button ${!isValid ? 'auth__button_disabled' : ''}`} type='submit' disabled={!isValid}>
+              Войти
+            </button>
+            <p className='auth__text'>
+              Ещё не зарегистрированы?
+              <Link to='/signup' className='auth__link'>
+                Регистрация
+              </Link>
+            </p>
+          </div>
         </form>
       </div>
     </main>

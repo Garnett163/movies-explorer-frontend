@@ -1,10 +1,28 @@
 import React from 'react';
 
-function SearchForm() {
+function SearchForm({ searchQuery, setSearchQuery, onSearch }) {
+  function handleChange(evt) {
+    setSearchQuery(evt.target.value);
+  }
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onSearch();
+  }
+
   return (
     <section className='search-form'>
-      <form className='search-form__container'>
-        <input className='search-form__input' type='text' placeholder='Фильм' required></input>
+      <form className='search-form__container' onSubmit={handleSubmit} name='search'>
+        <span className='search-form__error'>Error</span>
+        <input
+          className='search-form__input'
+          name='search'
+          type='text'
+          placeholder='Фильм'
+          required
+          onChange={handleChange}
+          value={searchQuery}
+        />
         <button className='search-form__button' type='submit'>
           Поиск
         </button>
