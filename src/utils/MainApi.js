@@ -93,8 +93,8 @@ class MainApi {
 }
 
 export const mainApi = new MainApi({
-  // baseUrl: `https://api.movies.garnett163.nomoreparties.co`,
-  baseUrl: 'http://localhost:4000',
+  baseUrl: `https://api.movies.garnett163.nomoreparties.co`,
+  // baseUrl: 'http://localhost:4000',
   headers: {
     'Content-Type': 'application/json',
   },
