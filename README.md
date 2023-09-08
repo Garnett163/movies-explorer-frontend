@@ -9,5 +9,5 @@
 **О проекте**
 
 - Макет - dark-4
-- Сайт - movies.garnett163.nomoreparties.co
+- Сайт - https://movies.garnett163.nomoreparties.co
 - Pull request https://github.com/Garnett163/movies-explorer-frontend/pull/2
