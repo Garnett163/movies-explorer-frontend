@@ -4,10 +4,10 @@ import Footer from '../sections/Footer';
 import SearchForm from '../sections/SearchForm';
 import MoviesCardList from '../sections/MoviesCardList';
 import MoreButton from '../sections/MoreButton';
-import { searchFilteringByWords, searchFilteringByDuration } from '../utils/utils';
-import { moviesApi } from '../utils/MoviesApi';
-import useVisibleMoviesCount from '../hooks/useVisibleMoviesCount.js';
-import { mainApi } from '../utils/MainApi';
+import { searchFilteringByWords, searchFilteringByDuration } from '../../utils/utils';
+import { moviesApi } from '../../utils/MoviesApi';
+import useVisibleMoviesCount from '../../hooks/useVisibleMoviesCount.js';
+import { mainApi } from '../../utils/MainApi';
 
 function Movies({ isLoggedIn }) {
   const [movies, setMovies] = useState([]);

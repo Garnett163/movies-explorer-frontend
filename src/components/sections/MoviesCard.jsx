@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getTimeFromMins } from '../utils/utils';
+import { getTimeFromMins } from '../../utils/utils';
 
 function MoviesCard({ movie, onDeleteMovie, handleSaveMovie, handleDeleteMovie }) {
   const srcImage = movie.image.url ? `https://api.nomoreparties.co/${movie.image.url}` : movie.image;

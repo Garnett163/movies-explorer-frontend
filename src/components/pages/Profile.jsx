@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../sections/Header';
-import CurrentUserContext from '../contexts/CurrentUserContext';
-import { useFormAndValidation } from '../hooks/useFormAndValidation';
-import { mainApi } from '../utils/MainApi';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
+import { useFormAndValidation } from '../../hooks/useFormAndValidation';
+import { mainApi } from '../../utils/MainApi';
 
 function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
   const [isEditSuccess, setIsEditSuccess] = useState('');

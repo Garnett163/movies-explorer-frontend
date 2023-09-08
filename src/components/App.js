@@ -9,9 +9,9 @@ import Login from './pages/Login';
 import PageNotFound from './pages/PageNotFound';
 import Preloader from './UI/Preloader';
 
-import { mainApi } from './utils/MainApi';
-import ProtectedRoute from './utils/ProtectedRoute';
-import CurrentUserContext from './contexts/CurrentUserContext';
+import { mainApi } from '../utils/MainApi';
+import ProtectedRoute from '../utils/ProtectedRoute';
+import CurrentUserContext from '../contexts/CurrentUserContext';
 
 function App() {
   const navigate = useNavigate();

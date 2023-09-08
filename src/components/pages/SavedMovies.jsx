@@ -3,8 +3,8 @@ import Header from '../sections/Header';
 import SearchForm from '../sections/SearchForm';
 import MoviesCardList from '../sections/MoviesCardList';
 import Footer from '../sections/Footer';
-import { mainApi } from '../utils/MainApi';
-import { searchFilteringByWords, searchFilteringByDuration } from '../utils/utils';
+import { mainApi } from '../../utils/MainApi';
+import { searchFilteringByWords, searchFilteringByDuration } from '../../utils/utils';
 
 function SavedMovies({ isLoggedIn }) {
   const [isSaveMovie, setIsSaveMovie] = useState([]);
