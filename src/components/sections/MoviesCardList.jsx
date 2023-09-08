@@ -2,7 +2,7 @@ import React from 'react';
 import MoviesCard from './MoviesCard';
 import Preloader from '../UI/Preloader';
 
-function MoviesCardList({ moviesArray, searchError, isLoading }) {
+function MoviesCardList({ movies, searchError, isLoading, deleteMovie, handleSaveMovie, handleDeleteMovie }) {
   return (
     <section className='movies-card'>
       <span className='movies-card__error'>{searchError}</span>
@@ -10,22 +10,13 @@ function MoviesCardList({ moviesArray, searchError, isLoading }) {
         <Preloader />
       ) : (
         <ul className='movies-card__list'>
-          {moviesArray.map((movie) => (
+          {movies.map((movie) => (
             <MoviesCard
-              key={movie.id}
-              nameRU={movie.nameRU}
-              duration={movie.duration}
-              trailerLink={movie.trailerLink}
-              country={movie.country}
-              director={movie.director}
-              year={movie.year}
-              description={movie.description}
-              image={`https://api.nomoreparties.co${movie.image.url}`}
-              thumbnail={`https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`}
-              owner={movie.owner}
-              movieId={movie.id}
-              nameEN={movie.nameEN}
-              id={movie._id}
+              key={movie.id || movie._id}
+              movie={movie}
+              handleDeleteMovie={handleDeleteMovie}
+              handleSaveMovie={handleSaveMovie}
+              onDeleteMovie={deleteMovie}
             />
           ))}
         </ul>

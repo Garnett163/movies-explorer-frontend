@@ -65,6 +65,31 @@ class MainApi {
       }),
     });
   }
+
+  getSavesMovies() {
+    return this._sendFetchRequest(`/movies`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: this._headers,
+    });
+  }
+
+  saveMovie(movie) {
+    return this._sendFetchRequest(`/movies`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: this._headers,
+      body: JSON.stringify(movie),
+    });
+  }
+
+  deleteMovie(movieId) {
+    return this._sendFetchRequest(`/movies/${movieId}`, {
+      method: 'DELETE',
+      credentials: 'include',
+      headers: this._headers,
+    });
+  }
 }
 
 export const mainApi = new MainApi({

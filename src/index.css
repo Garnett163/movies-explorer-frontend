@@ -99,6 +99,7 @@
 @import url(./blocks/profile/__error/profile__error.css);
 @import url(./blocks/profile/__edit-btn/profile__edit-btn.css);
 @import url(./blocks/profile/__edit-btn/_active/profile__edit-btn.css);
+@import url(./blocks/profile/__edit-success/profile__edit-success.css);
 @import url(./blocks/profile/__sign-out-btn/profile__sign-out-btn.css);
 @import url(./blocks/profile/__input-error/profile__input-error.css);
 @import url(./blocks/profile/__input-error/_active/profile__input-error_active.css);

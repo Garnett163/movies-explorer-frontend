@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../sections/Header';
 import CurrentUserContext from '../contexts/CurrentUserContext';
@@ -6,9 +6,20 @@ import { useFormAndValidation } from '../hooks/useFormAndValidation';
 import { mainApi } from '../utils/MainApi';
 
 function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
-  const currentUser = useContext(CurrentUserContext);
-  const { values, handleChange, errors, setValues, isValid, resetForm } = useFormAndValidation();
+  const [isEditSuccess, setIsEditSuccess] = useState('');
   const [error, setError] = useState(null);
+  const currentUser = useContext(CurrentUserContext);
+  const { values, handleInputChange, errors, isValid } = useFormAndValidation({
+    name: currentUser.name || '',
+    email: currentUser.email || '',
+  });
+
+  const initialValues = {
+    name: currentUser.name || '',
+    email: currentUser.email || '',
+  };
+
+  const isFormChanged = values.name !== initialValues.name || values.email !== initialValues.email;
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -18,6 +29,10 @@ function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
       .then((response) => {
         setCurrentUser(response);
         setError(null);
+        setIsEditSuccess('Обновление данных прошло успешно');
+        setTimeout(() => {
+          setIsEditSuccess(null);
+        }, 3000);
       })
       .catch((err) => {
         if (err.status === 409) {
@@ -27,6 +42,7 @@ function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
         } else {
           setError('При обновлении профиля произошла ошибка.');
         }
+        setIsEditSuccess('');
       });
   }
 
@@ -45,14 +61,6 @@ function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
       });
   }
 
-  useEffect(() => {
-    resetForm();
-    setValues({
-      name: currentUser.name,
-      email: currentUser.email,
-    });
-  }, [setValues, currentUser, resetForm]);
-
   return (
     <>
       <Header isLoggedIn={isLoggedIn} />
@@ -70,7 +78,7 @@ function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
               minLength='2'
               maxLength='25'
               required
-              onChange={handleChange}
+              onChange={(evt) => handleInputChange('name', evt.target.value)}
               value={values.name || ''}
             />
             <span className={`profile__input-error ${errors.name ? 'profile__input-error_active' : ''}`}>{errors.name}</span>
@@ -85,14 +93,19 @@ function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
               minLength='3'
               maxLength='25'
               required
-              onChange={handleChange}
+              onChange={(evt) => handleInputChange('email', evt.target.value)}
               value={values.email || ''}
             />
             <span className={`profile__input-error ${errors.email ? 'profile__input-error_active' : ''}`}>{errors.email}</span>
           </label>
           <div className='profile__flex-box'>
+            <p className='profile__edit-success'>{isEditSuccess}</p>
             <span className='profile__error'>{error}</span>
-            <button className={`profile__edit-btn ${!isValid ? 'profile__edit-btn_active' : ''}`} type='submit' disabled={!isValid}>
+            <button
+              className={`profile__edit-btn ${!isValid || !isFormChanged ? 'profile__edit-btn_active' : ''}`}
+              type='submit'
+              disabled={!isValid || !isFormChanged}
+            >
               Редактировать
             </button>
             <Link to='/' className='profile__sign-out-btn' onClick={signOut}>

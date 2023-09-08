@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from 'react';
-import { useFieldValidation } from './useValidationTest';
+import { useFieldValidation } from './useFieldValidation';
 
-export function useValidation(initialState) {
+export function useFormAndValidation(initialState) {
   const [values, setValues] = useState(initialState);
   const [isValid, setIsValid] = useState(false);
 

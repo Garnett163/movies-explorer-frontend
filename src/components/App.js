@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Navigate, useLocation } from 'react-router-dom';
 import Main from './pages/Main';
 import Movies from './pages/Movies.jsx';
 import SavedMovies from './pages/SavedMovies';
@@ -13,12 +13,9 @@ import { mainApi } from './utils/MainApi';
 import ProtectedRoute from './utils/ProtectedRoute';
 import CurrentUserContext from './contexts/CurrentUserContext';
 
-import ValidationTest from './pages/ValidationTest';
-import LoginTEST from './pages/LoginTEST';
-import ProfileTEST from './pages/ProfileTEST';
-
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -85,6 +82,12 @@ function App() {
       });
   }
 
+  if (location.pathname === '/signin' || location.pathname === '/signup') {
+    if (isLoggedIn) {
+      return <Navigate to='movies'></Navigate>;
+    }
+  }
+
   return (
     <div className='page'>
       {isLoading ? (
@@ -99,7 +102,7 @@ function App() {
               path='/profile'
               element={
                 <ProtectedRoute
-                  element={ProfileTEST}
+                  element={Profile}
                   isLoggedIn={isLoggedIn}
                   setIsLoading={setIsLoading}
                   setIsLoggedIn={setIsLoggedIn}
@@ -107,8 +110,8 @@ function App() {
                 />
               }
             ></Route>
-            <Route path='/signup' element={<ValidationTest onRegister={handleRegisterSubmit} serverError={serverError} />}></Route>
-            <Route path='/signin' element={<LoginTEST onLogin={handleLoginSubmit} serverError={serverError} />}></Route>
+            <Route path='/signup' element={<Register onRegister={handleRegisterSubmit} serverError={serverError} />}></Route>
+            <Route path='/signin' element={<Login onLogin={handleLoginSubmit} serverError={serverError} />}></Route>
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </CurrentUserContext.Provider>

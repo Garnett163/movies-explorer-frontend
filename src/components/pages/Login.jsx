@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/header__logo.svg';
 import { useFormAndValidation } from '../hooks/useFormAndValidation';
 
 function Login({ onLogin, serverError }) {
-  const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
+  const { values, errors, isValid, handleInputChange } = useFormAndValidation({
+    email: '',
+    password: '',
+  });
 
   function handleSubmit(evt) {
     evt.preventDefault();
     onLogin(values);
   }
-
-  useEffect(() => {
-    resetForm();
-  }, [resetForm]);
 
   return (
     <main className='auth'>
@@ -34,11 +33,12 @@ function Login({ onLogin, serverError }) {
               required
               minLength='5'
               maxLength='25'
-              onChange={handleChange}
-              value={values.email || ''}
+              value={values.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
             />
           </label>
           <span className={`auth__error ${errors.email ? 'auth__error_active' : ''}`}>{errors.email}</span>
+
           <label className='auth__label' htmlFor='inputPassword'>
             Пароль
             <input
@@ -50,8 +50,8 @@ function Login({ onLogin, serverError }) {
               required
               minLength='3'
               maxLength='25'
-              onChange={handleChange}
-              value={values.password || ''}
+              value={values.password}
+              onChange={(e) => handleInputChange('password', e.target.value)}
             />
           </label>
           <span className={`auth__error ${errors.password ? 'auth__error_active' : ''}`}>{errors.password}</span>
