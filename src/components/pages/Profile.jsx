@@ -54,6 +54,7 @@ function Profile({ isLoggedIn, setCurrentUser, setIsLoading, setIsLoggedIn }) {
           setIsLoggedIn(false);
           setCurrentUser({});
           setIsLoading(false);
+          localStorage.clear();
         }
       })
       .catch((err) => {
