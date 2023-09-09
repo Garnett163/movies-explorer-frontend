@@ -2,7 +2,7 @@ import React from 'react';
 import MoviesCard from './MoviesCard';
 import Preloader from '../UI/Preloader';
 
-function MoviesCardList({ movies, searchError, isLoading, deleteMovie, handleSaveMovie, handleDeleteMovie }) {
+function MoviesCardList({ movies, searchError, isLoading, deleteMovie, handleDeleteMovie, setIsSaveMovie, isSaveMovie }) {
   return (
     <section className='movies-card'>
       <span className='movies-card__error'>{searchError}</span>
@@ -15,8 +15,9 @@ function MoviesCardList({ movies, searchError, isLoading, deleteMovie, handleSav
               key={movie.id || movie._id}
               movie={movie}
               handleDeleteMovie={handleDeleteMovie}
-              handleSaveMovie={handleSaveMovie}
               onDeleteMovie={deleteMovie}
+              setIsSaveMovie={setIsSaveMovie}
+              isSaveMovie={isSaveMovie}
             />
           ))}
         </ul>

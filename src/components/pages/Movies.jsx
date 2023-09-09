@@ -143,30 +143,6 @@ function Movies({ isLoggedIn }) {
     }
   }
 
-  function handleSaveMovie(movie) {
-    return mainApi
-      .saveMovie({
-        country: movie.country,
-        director: movie.director,
-        duration: movie.duration,
-        year: movie.year,
-        description: movie.description,
-        image: `https://api.nomoreparties.co/${movie.image.url}`,
-        trailerLink: movie.trailerLink,
-        thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
-        movieId: movie.id,
-        nameRU: movie.nameRU,
-        nameEN: movie.nameEN,
-      })
-      .then((response) => {
-        setIsSaveMovie([response, ...isSaveMovie]);
-        localStorage.setItem('savedMovies', JSON.stringify([response, ...isSaveMovie]));
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
   function handleDeleteMovie(movie) {
     const findMovie = isSaveMovie.find((i) => i.movieId === movie.id);
     const movieId = findMovie._id;
@@ -230,8 +206,9 @@ function Movies({ isLoggedIn }) {
           movies={updatedSearchResults.slice(0, visibleMoviesCount)}
           isLoading={isLoading}
           searchError={searchError}
-          handleSaveMovie={handleSaveMovie}
           handleDeleteMovie={handleDeleteMovie}
+          setIsSaveMovie={setIsSaveMovie}
+          isSaveMovie={isSaveMovie}
         ></MoviesCardList>
         {visibleMoviesCount < searchResults.length && (
           <MoreButton setVisibleMoviesCount={setVisibleMoviesCount} visibleMoviesCount={visibleMoviesCount} />

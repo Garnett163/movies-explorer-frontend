@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getTimeFromMins } from '../../utils/utils';
+import { mainApi } from '../../utils/MainApi';
 
-function MoviesCard({ movie, onDeleteMovie, handleSaveMovie, handleDeleteMovie }) {
+function MoviesCard({ movie, onDeleteMovie, handleDeleteMovie, setIsSaveMovie, isSaveMovie }) {
   const srcImage = movie.image.url ? `https://api.nomoreparties.co/${movie.image.url}` : movie.image;
   const location = useLocation();
   const changeBtn = location.pathname === '/saved-movies';
@@ -20,6 +21,31 @@ function MoviesCard({ movie, onDeleteMovie, handleSaveMovie, handleDeleteMovie }
     } else {
       onDeleteMovie(movie._id);
     }
+  }
+
+  function handleSaveMovie(movie) {
+    return mainApi
+      .saveMovie({
+        country: movie.country,
+        director: movie.director,
+        duration: movie.duration,
+        year: movie.year,
+        description: movie.description,
+        image: `https://api.nomoreparties.co/${movie.image.url}`,
+        trailerLink: movie.trailerLink,
+        thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
+        movieId: movie.id,
+        nameRU: movie.nameRU,
+        nameEN: movie.nameEN,
+      })
+      .then((response) => {
+        setIsSaveMovie([response, ...isSaveMovie]);
+        localStorage.setItem('savedMovies', JSON.stringify([response, ...isSaveMovie]));
+      })
+      .catch((err) => {
+        setIsSaved(false);
+        console.error(err);
+      });
   }
 
   return (
