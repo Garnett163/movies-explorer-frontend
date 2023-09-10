@@ -143,21 +143,6 @@ function Movies({ isLoggedIn }) {
     }
   }
 
-  function handleDeleteMovie(movie) {
-    const findMovie = isSaveMovie.find((i) => i.movieId === movie.id);
-    const movieId = findMovie._id;
-
-    mainApi
-      .deleteMovie(movieId)
-      .then((response) => {
-        setIsSaveMovie((state) => state.filter((c) => c._id !== movieId));
-        localStorage.setItem('savedMovies', JSON.stringify(isSaveMovie.filter((item) => item._id !== movieId)));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
   useEffect(() => {
     function handleResize() {
       const screenWidth = window.innerWidth;
@@ -206,7 +191,6 @@ function Movies({ isLoggedIn }) {
           movies={updatedSearchResults.slice(0, visibleMoviesCount)}
           isLoading={isLoading}
           searchError={searchError}
-          handleDeleteMovie={handleDeleteMovie}
           setIsSaveMovie={setIsSaveMovie}
           isSaveMovie={isSaveMovie}
         ></MoviesCardList>

@@ -14,7 +14,6 @@ function MoviesCardList({ movies, searchError, isLoading, deleteMovie, handleDel
             <MoviesCard
               key={movie.id || movie._id}
               movie={movie}
-              handleDeleteMovie={handleDeleteMovie}
               onDeleteMovie={deleteMovie}
               setIsSaveMovie={setIsSaveMovie}
               isSaveMovie={isSaveMovie}

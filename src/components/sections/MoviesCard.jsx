@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { getTimeFromMins } from '../../utils/utils';
 import { mainApi } from '../../utils/MainApi';
 
-function MoviesCard({ movie, onDeleteMovie, handleDeleteMovie, setIsSaveMovie, isSaveMovie }) {
+function MoviesCard({ movie, onDeleteMovie, setIsSaveMovie, isSaveMovie }) {
   const srcImage = movie.image.url ? `https://api.nomoreparties.co/${movie.image.url}` : movie.image;
   const location = useLocation();
   const changeBtn = location.pathname === '/saved-movies';
@@ -13,17 +13,34 @@ function MoviesCard({ movie, onDeleteMovie, handleDeleteMovie, setIsSaveMovie, i
     if (!changeBtn) {
       if (isSaved) {
         handleDeleteMovie(movie);
-        setIsSaved(false);
       } else {
         handleSaveMovie(movie);
-        setIsSaved(true);
       }
     } else {
       onDeleteMovie(movie._id);
     }
   }
 
+  function handleDeleteMovie(movie) {
+    setIsSaved(true);
+    const findMovie = isSaveMovie.find((i) => i.movieId === movie.id);
+    const movieId = findMovie._id;
+
+    mainApi
+      .deleteMovie(movieId)
+      .then((response) => {
+        setIsSaved(false);
+        setIsSaveMovie((state) => state.filter((c) => c._id !== movieId));
+        localStorage.setItem('savedMovies', JSON.stringify(isSaveMovie.filter((item) => item._id !== movieId)));
+      })
+      .catch((err) => {
+        setIsSaved(true);
+        console.log(err);
+      });
+  }
+
   function handleSaveMovie(movie) {
+    setIsSaved(false);
     return mainApi
       .saveMovie({
         country: movie.country,
@@ -39,6 +56,7 @@ function MoviesCard({ movie, onDeleteMovie, handleDeleteMovie, setIsSaveMovie, i
         nameEN: movie.nameEN,
       })
       .then((response) => {
+        setIsSaved(true);
         setIsSaveMovie([response, ...isSaveMovie]);
         localStorage.setItem('savedMovies', JSON.stringify([response, ...isSaveMovie]));
       })
