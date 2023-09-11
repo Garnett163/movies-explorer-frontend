@@ -1,0 +1,14 @@
+.auth__server-error {
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 13px;
+  color: #ff004c;
+}
+
+@media screen and (max-width: 425px) {
+  .auth__server-error {
+    font-size: 11px;
+  }
+}

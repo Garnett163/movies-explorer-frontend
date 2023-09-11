@@ -1,13 +1,13 @@
 .card {
   max-width: 360px;
-  justify-self: center;
+
   background-color: #222222;
   border-radius: 6px;
 }
 
 @media (max-width: 1279px) and (min-width: 769px) {
   .card {
-    max-width: 300px;
+    max-width: 310px;
     width: 100%;
   }
 }

@@ -9,4 +9,5 @@
 **О проекте**
 
 - Макет - dark-4
-- state - isLoggedIn for change Header
+- Сайт - https://movies.garnett163.nomoreparties.co
+- Pull request https://github.com/Garnett163/movies-explorer-frontend/pull/2

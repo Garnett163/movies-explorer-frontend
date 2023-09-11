@@ -10,6 +10,7 @@
   font-weight: 500;
   line-height: 13px;
   border-bottom: 1px solid #424242;
+  position: relative;
 }
 
 @media screen and (max-width: 550px) {

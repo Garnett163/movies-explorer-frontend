@@ -1,5 +1,8 @@
 .page-not-found__link {
-  padding-top: 184px;
+  margin-top: 194px;
+  border: none;
+  background: initial;
+  cursor: pointer;
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
@@ -8,7 +11,7 @@
 }
 
 .page-not-found__link:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 425px) {

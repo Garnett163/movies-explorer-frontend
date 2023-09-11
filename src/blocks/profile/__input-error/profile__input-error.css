@@ -1,0 +1,9 @@
+.profile__input-error {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 13px;
+  color: #ee3465;
+  position: absolute;
+  opacity: 0;
+  bottom: -15px;
+}
